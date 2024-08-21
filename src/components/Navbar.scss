@@ -1,0 +1,192 @@
+@import "../styles/variables";
+@import "../styles/mixins";
+
+/* Navbar全体のスタイル */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  height: 50px;
+  background-color: #49d42d;
+}
+
+/* サークル名のスタイル */
+.circleName {
+  font-size: 20px;
+  margin-left: 15px;
+  color: white;
+}
+
+/* メニューアイコンのスタイル */
+.menu-icon {
+  display: none;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+/* ナビゲーションリンクのスタイル */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+  margin-left: auto;
+}
+
+/* リンクのスタイル */
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  transition: all 0.1s;
+}
+
+.nav-links a:hover {
+  color: cadetblue;
+  cursor: pointer;
+  font-size: 1.15em;
+}
+
+/* アカウント名のスタイル */
+.nav-links li.account-name {
+  color: white; /* アカウント名を白色に設定 */
+}
+
+/* モバイル対応のメディアクエリ */
+@media (max-width: 876px) {
+  .menu-icon {
+    display: block;
+    margin-left: auto;
+    color: white;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    width: 170px; /* 幅を狭く設定 */
+    background-color: #49d42d;
+    gap: 15px;
+    padding: 10px 0;
+    text-align: right;
+    z-index: 1000; /* 他の要素より前面に表示 */
+  }
+
+  .nav-links.active {
+    display: block;
+    align-items: start; /* トグルメニューを上から表示 */
+    text-align: center;
+  }
+
+  .nav-links a {
+    padding: 10px;
+    text-align: center !important; /* テキストを右寄せに設定 */
+    margin: 0; /* 不要なマージンを削除 */
+  }
+
+  li {
+    padding: 8px;
+  }
+}
+
+/* 点滅効果のためのキーフレーム */
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* アカウント名のリストアイテムのスタイル */
+.account-name {
+  background-color: white;
+  color: $base-color2;
+  font-size: 16px;
+  padding: 0 10px;
+  margin: 0 20px;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.account-name.logged-out {
+  background-color: red; /* ログインしていない場合の背景色 */
+  color: white; /* テキストを白に */
+  animation: blink 5s infinite; /* 点滅アニメーションを追加 */
+}
+
+/* リンクを押したときの色の変化を防ぐ */
+.account-name:active,
+.account-name:focus {
+  color: white !important;
+  background-color: rgb(25, 41, 213) !important; /* 背景色を維持 */
+  outline: none; /* フォーカスリングを消す */
+}
+
+/* モバイル対応のメディアクエリにも対応 */
+@media (max-width: 876px) {
+  .account-name {
+    display: none;
+  }
+}
+/* スタイルの追加 */
+.account-name1 {
+  display: none; /* 初期状態では表示しない */
+  background-color: white;
+  color: $base-color2;
+  font-size: 18px;
+  padding: 0 10px;
+  margin: 0 20px;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+/* 2秒後に表示 */
+.account-name1.showAfterDelay {
+  display: flex; /* 2秒後に表示 */
+  background-color: white;
+  color: $base-color2;
+}
+
+/* アカウント名のリストアイテムのスタイル */
+.account-name1.logged-out {
+  background-color: red; /* ログインしていない場合の背景色 */
+  color: white; /* テキストを白に */
+  animation: blink 5s infinite; /* 点滅アニメーションを追加 */
+}
+
+/* リンクを押したときの色の変化を防ぐ */
+.account-name1:active,
+.account-name1:focus {
+  color: white !important;
+  background-color: rgb(25, 41, 213) !important; /* 背景色を維持 */
+  outline: none; /* フォーカスリングを消す */
+}
+
+/* モバイル対応のメディアクエリにも対応 */
+@media (max-width: 876px) {
+  .account-name1 {
+    display: flex;
+  }
+}
+
+/* 点滅効果のためのキーフレーム */
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 0;
+  }
+  95% {
+    opacity: 5;
+  }
+  100% {
+    opacity: 0;
+  }
+}

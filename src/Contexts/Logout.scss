@@ -1,0 +1,90 @@
+@import "../styles/variables";
+@import "../styles/mixins";
+
+.container-logout {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 600px;
+  align-items: center;
+  justify-content: center;
+  margin: 15px auto; /* Center horizontally and add top margin */
+
+  @media (max-width: 600px) {
+    margin-top: 20px; /* Reduce top margin for smaller screens */
+  }
+
+  .content {
+    width: 90%;
+    border-color: $base-color2;
+    box-sizing: 20pxs;
+    background-color: $base-color2;
+    transition: 200ms;
+    border-radius: 5px;
+    @include box-shadow;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px !important;
+    margin: 10px;
+
+    p {
+      width: 100%;
+      text-align: center;
+      margin: 0 !important;
+      margin: 10px 0 0 0 !important;
+      font-size: 24px;
+      color: white;
+      font-weight: 600;
+
+      @media (max-width: 600px) {
+        font-size: 20px !important; /* Smaller font size for smaller screens */
+        margin-top: 0 !important;
+      }
+    }
+
+    .logout-button {
+      background-color: white !important;
+      color: $base-color2;
+      width: 90%;
+      text-align: center;
+      @include box-shadow;
+      border: none;
+      border-radius: 5px;
+      font-size: 24px;
+      font-weight: 400 !important;
+      margin: 10px !important;
+
+      &:hover {
+        background-color: $base-color2;
+        color: $base-color;
+        cursor: pointer;
+        font-size: 25px;
+      }
+
+      &:active {
+        transform: translateY(3px) translateX(3px);
+        transition-duration: 100ms;
+      }
+      @media (max-width: 600px) {
+        font-size: 16px !important; /* Smaller font size for smaller screens */
+        width: 60% !important; /* Full width for smaller screens */
+        margin: 8px 0 0 !important;
+        padding: 0 !important;
+        &:hover {
+          background-color: $base-color2;
+          color: $base-color;
+          cursor: pointer;
+          font-size: 18px !important;
+        }
+
+        &:active {
+          transform: translateY(3px) translateX(3px);
+          transition-duration: 100ms;
+        }
+      }
+    }
+  }
+}

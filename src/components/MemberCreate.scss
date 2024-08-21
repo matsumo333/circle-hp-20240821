@@ -1,0 +1,127 @@
+@import "../styles/variables";
+@import "../styles/mixins";
+
+.MemberCreate-Container {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding: 20px;
+  background-color: $base-color2;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  @include box-shadow;
+  @media (max-width: 576px) {
+    padding: 10px;
+    margin-top: 5px;
+  }
+}
+.MemberCreate-Container h2 {
+  font-size: 28px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  color: white;
+  @media (max-width: 576px) {
+    font-size: 18px;
+
+    margin: 0 0 10px 0;
+  }
+}
+
+.MemberCreate-Container p {
+  font-size: 22px;
+  margin: 15px 0;
+  padding: 10px 10px;
+  text-align: left;
+  color: white;
+  background-color: rgb(235, 34, 37);
+  @media (max-width: 576px) {
+    font-size: 18px;
+
+    margin: 0 0 10px 0;
+  }
+}
+.MemberCreate-Container .content {
+  display: flex;
+  flex-direction: column;
+}
+.MemberCreate-Container .content .formField {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  padding: 0 !important;
+  @media (max-width: 576px) {
+    margin: 5px;
+  }
+}
+
+.MemberCreate-Container .content .formField label {
+  display: block;
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: white;
+  @media (max-width: 576px) {
+    font-size: 14px;
+    padding: 0;
+    margin: 0;
+  }
+}
+.MemberCreate-Container .content .formField input {
+  width: 100%;
+  padding: 2px;
+  border-radius: 5px;
+  margin: 0;
+  font-size: 20px;
+  @include box-shadow;
+
+  &:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+
+  @media (max-width: 576px) {
+    width: 95%;
+    // max-width: 400px;
+    font-size: 14px;
+    padding: 2px;
+    margin: 0;
+  }
+}
+
+.MemberCreate-Container .content .formField input[type="checkbox"] {
+  margin-top: 2px;
+  width: 20px; // チェックボックスの幅を指定
+  height: 20px; // チェックボックスの高さを指定
+  margin: 10px 0 15px;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+  transform: scale(1.2); // チェックボックスを少し大きくする
+}
+.MemberCreate-Container .content button {
+  margin: 14px 0 6px !important;
+  padding: 5px 0 1px;
+  width: 400px;
+  background-color: $base-color;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 24px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s;
+  align-self: center; // ボタンを中央に配置するために追加
+  @include box-shadow;
+
+  @media (max-width: 576px) {
+    width: 60%;
+    font-size: 14px !important;
+    margin: 5px;
+  }
+
+  &:hover {
+    background-color: $cation-color;
+  }
+}

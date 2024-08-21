@@ -1,0 +1,236 @@
+@import "../styles/variables";
+@import "../styles/mixins";
+
+.eventListContainer {
+  margin-top: 8px;
+  font-weight: 100;
+  width: 100%; // コンテナを全幅にする
+  overflow-x: auto; // 必要に応じて水平スクロールを有効にする
+
+  .sankasumi {
+    width: 100%;
+    padding: 10px;
+    background-color: $base-color2;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 24px;
+    margin: auto;
+  }
+
+  .event-date {
+    font-size: 26px;
+
+    @media (max-width: 1200px) {
+      font-size: 24px; // Adjust font size for medium screens
+    }
+
+    @media (max-width: 768px) {
+      font-size: 22px; // Adjust font size for small screens
+    }
+
+    @media (max-width: 480px) {
+      font-size: 20px; // Adjust font size for very small screens
+    }
+  }
+
+  .event_title {
+    background-color: $base-color2;
+    color: white;
+    height: 40px;
+    text-align: center;
+    border: 1px solid white; // タイトル部分の枠線を白色にする
+    @media (max-width: 576px) {
+      width: 50px !important; /* 幅を150pxに変更 */
+    }
+  }
+
+  .participantList {
+    width: 100px;
+    text-align: center;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .participantList button {
+    font-size: 18px !important;
+    font-weight: bold;
+    color: black;
+    background-color: rgb(26, 198, 61);
+    border: 1px solid black; /* ボタンの枠線 */
+    border-radius: 4px; /* 任意で角を丸くする */
+    width: 100%;
+    height: 22px;
+    margin: 1px !important;
+    padding: 0 !important;
+    padding-bottom: 3px !important;
+    cursor: pointer; /* ホバー時にポインターを表示 */
+    white-space: nowrap; /* ボタン内のテキストが折り返されないようにする */
+    @media (max-width: 576px) {
+      width: 80px;
+      font-size: 14px;
+      height: 26px !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+  }
+  .sanka {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+  }
+
+  .button_title {
+    padding: 4px 4px 2px !important;
+    background-color: #6c6cec;
+    font-size: 20px !important;
+    font-weight: 600;
+    @media (max-width: 576px) {
+      font-size: 16px !important;
+    }
+  }
+
+  .button2 {
+    width: 100%;
+    color: white;
+    background-color: #21d89b;
+    text-align: center; /* ボタンの中央揃え */
+    margin: auto;
+    font-size: 20px;
+  }
+
+  button {
+    width: 90%;
+    color: white;
+    padding: 2px;
+    margin-top: 2px;
+    background-color: rgb(108, 108, 236);
+    text-align: center; /* ボタンの中央揃え */
+    margin: auto;
+    font-size: px;
+    font-weight: 600;
+  }
+
+  // .eventListContainer .button_title {
+  //   color: red !important;
+  // }
+
+  td,
+  th {
+    text-align: center;
+    font-weight: 600;
+    vertical-align: middle; /* 垂直方向の中央揃え */
+    border: 1px solid $base-color; // セルの間に灰色の枠線を追加
+  }
+
+  tr {
+    border: 1px solid $base-color; // 行の間に灰色の枠線を追加
+  }
+
+  tr:nth-child(even) {
+    background-color: lightgray; // 偶数行の背景色
+  }
+
+  tr:nth-child(odd) {
+    background-color: white; // 奇数行の背景色
+  }
+
+  .th:nth-child(3) {
+    width: 200px !important; // 3列目の幅を指定
+    background-color: aqua;
+  }
+
+  table {
+    width: 100%; // テーブルを全幅にする
+    border-collapse: collapse;
+  }
+
+  /* 画面幅が狭いときに特定の列を非表示にする */
+  @media (max-width: 768px) {
+    .hide-on-narrow {
+      display: none;
+    }
+  }
+
+  /* その他のレスポンシブ調整用のメディアクエリ */
+  @media (max-width: 1200px) {
+    table {
+      font-size: 18px;
+    }
+
+    th,
+    td {
+      padding: 6px;
+    }
+  }
+
+  @media (max-width: 992px) {
+    table {
+      font-size: 16px;
+    }
+
+    th,
+    td {
+      padding: 4px;
+    }
+
+    .button2,
+    button {
+      font-size: 18px;
+    }
+  }
+
+  @media (max-width: 576px) {
+    table {
+      font-size: 10px !important;
+    }
+
+    th,
+    td {
+      font-size: 16px;
+
+      padding: 2px;
+    }
+
+    .event_title {
+      font-size: 16px;
+    }
+  }
+}
+
+.hyodai {
+  display: flex;
+  justify-content: center; /* 横方向の中央揃え */
+  align-items: center; /* 縦方向の中央揃え */
+  gap: 20px; /* 要素間の間隔を調整 */
+
+  /* 子要素に対して中央揃えを適用 */
+  > div {
+    display: flex;
+    align-items: center;
+  }
+
+  h1,
+  h3 {
+    margin: 0; /* デフォルトのマージンを削除 */
+    @media (max-width: 576px) {
+      display: none !important;
+    }
+  }
+
+  .filter {
+    display: flex;
+    align-items: center;
+    font-size: 28px;
+    gap: 5px; /* チェックボックスとラベルの間隔を調整 */
+    label {
+      font-size: 18px;
+      font-weight: 600;
+      @media (max-width: 800px) {
+        font-size: 12px;
+        margin: 5px !important;
+      }
+    }
+  }
+}

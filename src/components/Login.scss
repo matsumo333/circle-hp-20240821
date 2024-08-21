@@ -1,0 +1,94 @@
+@import "../styles/variables";
+@import "../styles/mixins";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container-login {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 600px;
+  align-items: center;
+  justify-content: center;
+  margin: 15px auto; /* Center horizontally and add top margin */
+
+  @media (max-width: 600px) {
+    margin-top: 20px; /* Reduce top margin for smaller screens */
+  }
+}
+
+.container-login .content {
+  width: 90%;
+  margin: 0;
+  padding: 0;
+  border-color: $base-color2;
+  background-color: $base-color2;
+  transition: 200ms;
+  border-radius: 5px;
+  @include box-shadow;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 10px;
+}
+.container-login .content p {
+  width: 100%;
+  text-align: center;
+  margin: 15px 0 10px;
+  font-size: 24px;
+  color: white;
+  font-weight: 600;
+
+  @media (max-width: 600px) {
+    font-size: 18px;
+    margin-top: 5px;
+  }
+}
+.container-login .content .login-button {
+  background-color: white;
+  color: $base-color2;
+  width: 90%;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  @include box-shadow;
+  font-size: 24px;
+  font-weight: 500;
+  margin: 3px 0 10px;
+  padding: 3px;
+
+  &:hover {
+    background-color: $navbar-color;
+    color: white;
+    cursor: pointer;
+    font-size: 25px;
+    @media (max-width: 600px) {
+      background-color: $navbar-color;
+      color: white;
+      cursor: pointer;
+      font-size: 14px;
+    }
+  }
+
+  &:active {
+    transform: translateY(3px) translateX(3px);
+    transition-duration: 100ms;
+  }
+  @media (max-width: 600px) {
+    font-size: 13px; /* Smaller font size for smaller screens */
+    font-weight: 400;
+    width: 60%; /* Full width for smaller screens */
+    margin: 0 0 10px 0;
+
+    &:active {
+      transform: translateY(3px) translateX(3px);
+      transition-duration: 100ms;
+    }
+  }
+}

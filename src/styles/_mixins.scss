@@ -1,0 +1,63 @@
+//mixins.scss
+
+@mixin box-shadow(
+  $color: black,
+  $offset-x: 8px,
+  $offset-y: 8px,
+  $blur: 8px,
+  $spread: -5px
+) {
+  box-shadow: $offset-x $offset-y $blur $spread $color;
+}
+
+@mixin center-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin responsive-font-size($default-size, $media-size) {
+  font-size: $default-size;
+
+  @media (max-width: 576px) {
+    font-size: $media-size;
+  }
+}
+
+@mixin grid-area($area) {
+  grid-area: $area;
+}
+
+@mixin box-style($padding: 10px, $margin: 1px, $font-size: 22px, $font-weight: 600) {
+  padding: $padding;
+  margin: $margin;
+  font-size: $font-size;
+  font-weight: $font-weight;
+}
+
+
+@mixin form-item-style {
+  font-size: 24px !important;
+  font-weight: 600;
+  border: none;
+  padding: 10px;
+  @include center-flex;
+  padding-top: 15px;
+
+  @media (max-width: 576px) {
+    font-size: 22px !important;
+    min-width: 10px 0 !important;
+  }
+}
+
+@mixin label-style {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10px !important;
+  background-color: burlywood;
+  @media (max-width: 576px) {
+    font-size: 28px;
+    min-width: 80px !important;
+  }
+}

@@ -1,0 +1,53 @@
+@import "../styles/variables";
+@import "../styles/mixins";
+
+.memberListContainer {
+  width: 800px;
+  margin: 15px auto;
+  padding: 20px;
+  background-color: $base-color2;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  /* 画面幅が狭いときに特定の列を非表示にする */
+  @media (max-width: 576px) {
+    width: 98%;
+    .hide-on-narrow {
+      display: none;
+    }
+  }
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+table th,
+table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+  @media (max-width: 576px) {
+    word-break: break-all; /* 長い単語を折り返す */
+    white-space: normal; /* テキストを折り返し表示 */
+  }
+}
+
+table th {
+  background-color: #007bff;
+  color: white;
+}
+
+table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+table tr:hover {
+  background-color: #ddd;
+}
